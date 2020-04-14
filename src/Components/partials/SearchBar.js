@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { _blue } from "../../styles/colors";
 import { responsive } from "../../styles/responsive";
-import Button from "./Button";
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
@@ -20,9 +19,6 @@ const Input = styled.input`
   font-weight: 400;
   font-family: 'DM Sans', sans-serif;
   transition: all 0.3s ease-in-out;
-  :focus{
-    border: none;
-  }
   padding-left: 50px;
 `;
 const Form = styled.form`
@@ -50,16 +46,14 @@ const SearchIcon = styled.span`
 const SearchBar = () => {
   const [ content, setContent ] = useState("");
   const handleSubmit = e => {
-    e.preventDefault();
     
   }
-  console.log(content)
   return (
-    <Form method="post" onSubmit={e => handleSubmit(e)}>
+    <Form method="get" action="/search-result" onSubmit={e => handleSubmit(e)}>
       <SearchIcon>
         <i className="fas fa-search"></i>
       </SearchIcon>
-      <Input className="focus:outline-none shadow-md hover:shadow-xl rounded" name="search" placeholder="Search for ..." onChange={e => setContent(e.target.value)}/>
+      <Input className="outline-none focus:shadow-outline focus:bg-gray-200 shadow-md hover:shadow-xl rounded" name="search" placeholder="Search for ..." onChange={e => setContent(e.target.value)}/>
       <button type="submit"></button>
     </Form>
   );

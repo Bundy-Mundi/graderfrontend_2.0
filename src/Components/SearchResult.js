@@ -1,13 +1,18 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { _blue } from "../styles/colors";
 import { responsive } from "../styles/responsive";
 
 const SearchResult = () => {
+  let { search } = useLocation();
+  let term = search.split("=")[1];
+  console.log(term)
   return (
-
-    <p>SearchResult</p>
+    <>
+      Search By: { term }
+      <p>SearchResult</p>
+    </>
   );
 }
 

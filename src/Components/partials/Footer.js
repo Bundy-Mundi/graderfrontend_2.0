@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import SearchBar from "./SearchBar";
 import { _blue } from "../../styles/colors";
 import { responsive } from "../../styles/responsive";
 
@@ -44,8 +42,15 @@ const SocialMedia = styled.div`
   justify-content: space-evenly;
   font-size: 23px;
   width: 40%;
+  @media screen and ${responsive.mobileL} {
+    width: 80%;
+  }
+  @media screen and ${responsive.tablet} {
+    width: 50%;
+  }
 `;
 const Footer = () => {
+
   return(
     <Grid>
       <TextContainer>

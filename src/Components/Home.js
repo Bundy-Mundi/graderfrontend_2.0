@@ -2,7 +2,20 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { _blue } from "../styles/colors";
-import { responsive } from "../styles/responsive";
+import { responsive, size } from "../styles/responsive";
+
+const Form = styled.div`
+
+    @media (min-width:${size.laptop}) {
+      display: none;
+    }
+    @media (min-width:${size.laptopL}) {
+      display: none;
+    }
+    @media (min-width:${size.desktop}) {
+      display: none;
+    }
+`;
 
 const Flex = styled.div`
   display: flex;
@@ -10,10 +23,23 @@ const Flex = styled.div`
   align-items: center;
   justify-content: center;
 `;
+const SearchBarConainer = styled.div`
+    @media (min-width:${size.laptop}) {
+      display: none;
+    }
+    @media (min-width:${size.laptopL}) {
+      display: none;
+    }
+    @media (min-width:${size.desktop}) {
+      display: none;
+    }
+`;
 const Home = () => {
   return (
     <Flex>
-     <p>HOME</p>
+     <SearchBarConainer>
+       <p>Search Bar</p>
+     </SearchBarConainer>
     </Flex>
   );
 };
