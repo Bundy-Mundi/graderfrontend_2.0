@@ -2,18 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { _blue } from "../../styles/colors";
 import { responsive } from "../../styles/responsive";
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
-
-const SEARCH_TERM = gql`
-  {
-    courses
-  }
-`;
 
 const Input = styled.input`
   width: 100%;
-  height: 46px;
+  height: 44px;
   padding: 12px;
   font-size: 15px;
   font-weight: 400;
@@ -44,16 +36,12 @@ const SearchIcon = styled.span`
 `;
 
 const SearchBar = () => {
-  const [ content, setContent ] = useState("");
-  const handleSubmit = e => {
-    
-  }
   return (
-    <Form method="get" action="/search-result" onSubmit={e => handleSubmit(e)}>
+    <Form method="get" action="/search-result">
       <SearchIcon>
         <i className="fas fa-search"></i>
       </SearchIcon>
-      <Input className="outline-none focus:shadow-outline focus:bg-gray-200 shadow-md hover:shadow-xl rounded" name="search" placeholder="Search for ..." onChange={e => setContent(e.target.value)}/>
+      <Input className="outline-none focus:shadow-outline focus:bg-gray-200 shadow-md hover:shadow-xl rounded" name="search" placeholder="Search for ..." />
       <button type="submit"></button>
     </Form>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { _blue } from "../styles/colors";
 import { responsive, size } from "../styles/responsive";
 
@@ -36,11 +36,13 @@ const SearchBarConainer = styled.div`
 `;
 const Home = () => {
   return (
+    <>
     <Flex>
      <SearchBarConainer>
        <p>Search Bar</p>
      </SearchBarConainer>
     </Flex>
+    </>
   );
 };
 

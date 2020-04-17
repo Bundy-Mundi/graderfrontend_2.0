@@ -10,7 +10,7 @@ const Logo = styled.div`
   color: white;
   letter-spacing: 0.2rem;
   grid-column: 1 / 4;
-  font-size: 28px;
+  font-size: 23px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
