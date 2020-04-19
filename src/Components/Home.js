@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { useFadeIn } from "../hooks";
 import { Link } from "react-router-dom";
 import { _blue } from "../styles/colors";
 import { responsive, size } from "../styles/responsive";
@@ -35,9 +36,10 @@ const SearchBarConainer = styled.div`
     }
 `;
 const Home = () => {
+  const fadeIn = useFadeIn();
   return (
     <>
-    <Flex>
+    <Flex ref={ fadeIn } style={{ opacity: "0" }}>
      <SearchBarConainer>
        <p>Search Bar</p>
      </SearchBarConainer>

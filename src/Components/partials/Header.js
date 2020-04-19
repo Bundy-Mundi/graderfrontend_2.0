@@ -63,7 +63,7 @@ const SLink = styled(Link)`
 const Item = ({ link, text }) => {
   return (
     <Flex>
-      <SLink to={ link }>{ text }</SLink>
+      <SLink className="hover:text-gray-300" style={{ transition: "all 0.2s ease-in-out" }} to={ link }>{ text }</SLink>
     </Flex>
   );
 };

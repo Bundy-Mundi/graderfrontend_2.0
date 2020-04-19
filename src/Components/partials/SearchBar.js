@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { _blue } from "../../styles/colors";
 import { responsive } from "../../styles/responsive";
@@ -41,7 +41,9 @@ const SearchBar = () => {
       <SearchIcon>
         <i className="fas fa-search"></i>
       </SearchIcon>
-      <Input className="outline-none focus:shadow-outline focus:bg-gray-200 shadow-md hover:shadow-xl rounded" name="search" placeholder="Search for ..." />
+      <input type="hidden" name="search"></input>
+      <Input className="outline-none focus:shadow-outline focus:bg-gray-200 shadow-md hover:shadow-xl rounded" name="term" placeholder="Search for ..." type="text"/>
+      <input type="hidden" name="page" value="1"></input>
       <button type="submit"></button>
     </Form>
   );
