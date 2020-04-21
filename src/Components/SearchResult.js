@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { SEARCH_QUERY } from "../query";
 import Pagination from "./partials/Pagination";
 import CardGrid from "./partials/CardGrid";
+import Error404 from "./Error404";
 //import { _blue } from "../styles/colors";
 //import { responsive } from "../styles/responsive";
 
@@ -28,7 +29,7 @@ const SearchResult = () => {
       variables: { name: term }
     });
   if(loading) { return "Loading" }
-  if(error) { return error }
+  if(error) { return <Error404/> }
   let { courseByName } = data;
   return (
     <Flex>
