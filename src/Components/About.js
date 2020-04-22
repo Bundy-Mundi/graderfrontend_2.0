@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { useFadeIn } from "../hooks";
 import { _blue } from "../styles/colors";
 
 const Flex = styled.div`
@@ -10,10 +11,11 @@ const Flex = styled.div`
 `;
 
 const About = () => {
- return(
-  <Flex>
-    ABOUT
-  </Flex>
+  const fadeIn = useFadeIn();
+  return(
+    <Flex ref={ fadeIn } style={{ opacity: "0" }}>
+      ABOUT
+    </Flex>
  );
 }
 

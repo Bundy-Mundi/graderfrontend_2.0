@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useFadeIn } from "../hooks";
 import { Link } from "react-router-dom";
 import { _blue } from "../styles/colors";
-import { responsive, size } from "../styles/responsive";
+import { size } from "../styles/responsive";
 
 const Form = styled.div`
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { useFadeIn } from "../hooks";
 import { _blue } from "../styles/colors";
 import { responsive, size } from "../styles/responsive";
 
@@ -11,8 +12,9 @@ const Flex = styled.div`
 `;
 
 const Contact = () => {
+  const fadeIn = useFadeIn();
   return (
-    <Flex>
+    <Flex ref={ fadeIn } style={{ opacity:"0" }}>
       CONTACT
     </Flex>
   );

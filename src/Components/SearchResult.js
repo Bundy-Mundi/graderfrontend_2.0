@@ -7,6 +7,7 @@ import { SEARCH_QUERY } from "../query";
 import Pagination from "./partials/Pagination";
 import CardGrid from "./partials/CardGrid";
 import Error404 from "./Error404";
+import { useFadeIn } from '../hooks';
 //import { _blue } from "../styles/colors";
 //import { responsive } from "../styles/responsive";
 
@@ -39,7 +40,7 @@ const SearchResult = () => {
   if(error) { return <Error404/> }
   let { courseByName } = data;
   return (
-    <Flex className="mt-16">
+    <Flex className="mt-16" >
       <TextWrapper className="bg-gray-200 rounded shadow-lg">
         <p className="text-2xl uppercase">Search By: { term }</p>
       </TextWrapper>

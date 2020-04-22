@@ -1,13 +1,7 @@
-## Home 
-  - 
+- [] Home
 
-## Error Page
+- [] Loading Page
 
-## Loading Page
+- [] Pagination Design
 
-## Pagination Design
-
-## Card Design
-  - Use Chart JS Library
-
-## Search Result Grid
+- [] Enhance Search Result Board
