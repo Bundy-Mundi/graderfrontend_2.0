@@ -19,7 +19,14 @@ const Flex = styled.div`
   justify-content: center;
   width: 100%;
 `;
-
+const TextWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 90%;
+  border: 1px solid rgba(0,0,0,0.01);
+`;
 const SearchResult = () => {
   let { search } = useLocation();
   let queryString = querystring.parse(search, "&");
@@ -32,8 +39,10 @@ const SearchResult = () => {
   if(error) { return <Error404/> }
   let { courseByName } = data;
   return (
-    <Flex>
-      <p className="text-4xl">Search By: { term }</p>
+    <Flex className="mt-16">
+      <TextWrapper className="bg-gray-200 rounded shadow-lg">
+        <p className="text-2xl uppercase">Search By: { term }</p>
+      </TextWrapper>
       <CardGrid dataList={ courseByName } currentPage={ page } restriction={RESTRICTION}/>
       <Pagination dataList={ courseByName } term={term} restriction={RESTRICTION}/>
     </Flex>

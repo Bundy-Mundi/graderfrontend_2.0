@@ -20,7 +20,7 @@ const Grid =  styled.div`
 `;
 
 const Item = ({ term, pageNum }) => {
-return <Flex><SLink to={`search-result?search=&term=${term}&page=${pageNum}`}>{pageNum}</SLink></Flex>
+  return <Flex><SLink to={`search-result?search=&term=${term}&page=${pageNum}`}>{pageNum}</SLink></Flex>
 }
 
 const Pagination = ({ dataList, term, restriction }) => {
@@ -31,7 +31,7 @@ const Pagination = ({ dataList, term, restriction }) => {
   }
   console.log(pageNumbers)
   return (
-    <Flex width="50%">
+    <Flex className="my-8" width="50%">
       <Grid>
         {
           pageNumbers.map((v, k)=>{
