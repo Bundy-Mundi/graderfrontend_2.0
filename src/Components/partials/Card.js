@@ -28,8 +28,8 @@ const Text = styled.p`
   text-transform: uppercase;
   font-size: ${props=>props.fontSize};
   font-weight: ${props=>props.fontWeight};
-  letter-spacing: 0.1rem;
-  margin-top: 3px;
+  letter-spacing: ${props=>props.letterSpacing ? props.letterSpacing : "0.1rem"};
+  margin-top: 10px;
 `;
 const Span = styled.span`
   position: absolute;
@@ -78,10 +78,10 @@ const Card = (
   
   return (
     <a href={`/view/${id}`}>
-    <Flex className="shadow-lg py-6 px-4">
+    <Flex className="shadow-lg py-6 px-4 bg-white rounded">
       <Information>
-        <Text fontSize="30px" fontWeight="700">{ name }</Text>
-        <Text fontSize="30px" fontWeight="700">{ professor }</Text>
+        <Text fontSize="34px" fontWeight="200" letterSpacing="0.3rem">{ name }</Text>
+        <Text fontSize="27px" fontWeight="200" letterSpacing="0.25rem">{ professor }</Text>
         <Text>{ year }</Text>
         <Text>{ semester }</Text>
       </Information>

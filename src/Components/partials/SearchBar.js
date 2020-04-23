@@ -5,10 +5,8 @@ import { responsive } from "../../styles/responsive";
 
 const Input = styled.input`
   width: 100%;
-  height: 44px;
+  height: 100%;
   padding: 12px;
-  font-size: 15px;
-  font-weight: 400;
   font-family: 'DM Sans', sans-serif;
   transition: all 0.3s ease-in-out;
   padding-left: 50px;
@@ -16,13 +14,16 @@ const Input = styled.input`
 const Form = styled.form`
   position: relative;
   display: flex;
-  width: 80%;
+  font-size: ${props=>props.fontSize};
+  font-size: ${props=>props.fontWeight};
+  height: ${props=>props.height};
+  width: ${props=>props.width};
   
   @media screen and ${responsive.mobileL} {
-    display: none;
+    display: ${props=>props.whenScreenSmall};
   }
   @media screen and ${responsive.tablet} {
-    display: none;
+    display: ${props=>props.whenScreenSmall};
   }
 `;
 const SearchIcon = styled.span`
@@ -35,14 +36,21 @@ const SearchIcon = styled.span`
   color: ${_blue};
 `;
 
-const SearchBar = () => {
+const SearchBar = ({ whenScreenSmall, height, width, fontSize, fontWeight }) => {
   return (
-    <Form method="get" action="/search-result">
+    <Form 
+      method="get" 
+      action="/search-result" 
+      height={ height } 
+      width={ width } 
+      fontSize={ fontSize }
+      fontWeight={ fontWeight }
+      whenScreenSmall={ whenScreenSmall }>
       <SearchIcon>
         <i className="fas fa-search"></i>
       </SearchIcon>
       <input type="hidden" name="search"></input>
-      <Input className="outline-none focus:shadow-outline focus:bg-gray-200 shadow-md hover:shadow-xl rounded" name="term" placeholder="Search for ..." type="text"/>
+      <Input className="outline-none focus:shadow-outline focus:bg-gray-200 shadow-md hover:shadow-xl rounded" name="term" placeholder="Please Type Any Professor or Class Name" type="text"/>
       <input type="hidden" name="page" value="1"></input>
       <button type="submit"></button>
     </Form>

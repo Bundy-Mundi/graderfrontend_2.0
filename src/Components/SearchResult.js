@@ -6,8 +6,10 @@ import { useQuery } from "@apollo/react-hooks";
 import { SEARCH_QUERY } from "../query";
 import Pagination from "./partials/Pagination";
 import CardGrid from "./partials/CardGrid";
+import Loading from "./partials/Loading";
 import Error404 from "./Error404";
-import { useFadeIn } from '../hooks';
+import SearchBar from "./partials/SearchBar";
+import { responsive } from "../styles/responsive";
 //import { _blue } from "../styles/colors";
 //import { responsive } from "../styles/responsive";
 
@@ -27,6 +29,14 @@ const TextWrapper = styled.div`
   height: 150px;
   width: 90%;
   border: 1px solid rgba(0,0,0,0.01);
+  transition: box-shadow 0.2s ease-in-out;
+`;
+const SearchContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
 `;
 const SearchResult = () => {
   let { search } = useLocation();
@@ -34,18 +44,23 @@ const SearchResult = () => {
   const { page, term } = queryString;
   const { loading, error, data } = useQuery(SEARCH_QUERY, 
     { 
-      variables: { name: term }
+      variables: { term }
     });
-  if(loading) { return "Loading" }
+  if(loading) { return <Loading/> }
   if(error) { return <Error404/> }
-  let { courseByName } = data;
+  let { courseSearch } = data;
+  if(courseSearch===[] || null) { return "Nodata" }
   return (
     <Flex className="mt-16" >
-      <TextWrapper className="bg-gray-200 rounded shadow-lg">
-        <p className="text-2xl uppercase">Search By: { term }</p>
+      <TextWrapper className="mb-16 bg-white rounded shadow hover:shadow-xl">
+        <p className="text-lg uppercase">Search By: </p>
+        <p className="ml-10 text-3xl uppercase">{ term }</p>
       </TextWrapper>
-      <CardGrid dataList={ courseByName } currentPage={ page } restriction={RESTRICTION}/>
-      <Pagination dataList={ courseByName } term={term} restriction={RESTRICTION}/>
+      <SearchContainer>
+        <SearchBar width="90%" whenScreenSmall="block" height="100%" fontSize="17px" fontWeight="300"/>
+      </SearchContainer>
+      <CardGrid dataList={ courseSearch } currentPage={ page } restriction={RESTRICTION}/>
+      <Pagination dataList={ courseSearch } term={ term } restriction={RESTRICTION}/>
     </Flex>
   );
 }

@@ -4,6 +4,8 @@ import { useQuery } from "@apollo/react-hooks";
 import styled from "styled-components";
 import { _blue } from "../styles/colors";
 import { responsive } from "../styles/responsive";
+import Loading from "./partials/Loading";
+import Error404 from "./Error404";
 import { COURSE_QUERY } from "../query";
 
 const Flex = styled.div`
@@ -16,8 +18,8 @@ const Chart = () => {
   const { loading, error, data } = useQuery(COURSE_QUERY, { 
     variables: { id } 
   });
-  if (loading) { return "Loading ..." }
-  if (error) { return error }
+  if (loading) { return <Loading/> }
+  if (error) { return <Error404/> }
   const { courseByID } = data;
   return(
     <>

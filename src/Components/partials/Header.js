@@ -125,13 +125,12 @@ const SearchContainer = styled.div`
 `;
 
 const Header = () => {
-
   return (
     <>
     <Grid>
       <Logo><Link to="/">BEST GRADERS</Link></Logo>
       <SearchContainer>
-        <SearchBar/>
+        <SearchBar whenScreenSmall="none" fontWeight="400" fontSize="15px" height="47px" width="78%"/>
       </SearchContainer>
       <Item link = "/" text = "HOME" />
       <Item link = "/about" text = "ABOUT" />

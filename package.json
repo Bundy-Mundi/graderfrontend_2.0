@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.4",
+    "@bit/folland87.a24ui.loading-spinner": "^0.1.4",
     "@bit/primefaces.primereact.chart": "^3.1.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

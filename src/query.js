@@ -1,8 +1,8 @@
 import { gql } from "apollo-boost";
 
 export const SEARCH_QUERY = gql`
-  query courseByName($name:String!){
-    courseByName(name:$name) {
+  query courseSearch($term:String!){
+    courseSearch(term:$term) {
       id
       name
       professor

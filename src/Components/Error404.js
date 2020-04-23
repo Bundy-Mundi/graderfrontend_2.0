@@ -9,6 +9,8 @@ const Flex = styled.div`
   align-items: flex-start;
   justify-content: center;
   height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 200;
 `;
 
 const NoticeBoard = styled.div`
