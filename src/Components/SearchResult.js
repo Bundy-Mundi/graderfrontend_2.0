@@ -49,7 +49,7 @@ const SearchResult = () => {
   if(loading) { return <Loading/> }
   if(error) { return <Error404/> }
   let { courseSearch } = data;
-  if(courseSearch===[] || null) { return "Nodata" }
+  if(courseSearch===[] || courseSearch === null) { return "NoData" }
   return (
     <Flex className="mt-16" >
       <TextWrapper className="mb-16 bg-white rounded shadow hover:shadow-xl">

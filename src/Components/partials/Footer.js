@@ -59,9 +59,9 @@ const Footer = () => {
       <Flex>
         <SocialMedia>
           <a href="/"><i style={{ transition: "all 0.2s ease-in-out" }} className="fab fa-facebook-f hover:text-gray-400"></i></a>
-          <a href="/"><i style={{ transition: "all 0.2s ease-in-out" }} className="fab fa-instagram hover:text-gray-400"></i></a>
+          <a href="https://www.instagram.com/s_beom43/"><i style={{ transition: "all 0.2s ease-in-out" }} className="fab fa-instagram hover:text-gray-400"></i></a>
           <a href="/"><i style={{ transition: "all 0.2s ease-in-out" }} className="fab fa-twitter hover:text-gray-400"></i></a>
-          <a href="/"><i style={{ transition: "all 0.2s ease-in-out" }} className="fab fa-github hover:text-gray-400"></i></a>
+          <a href="https://github.com/Bundy-Mundi"><i style={{ transition: "all 0.2s ease-in-out" }} className="fab fa-github hover:text-gray-400"></i></a>
         </SocialMedia>
       </Flex>
       <Copyrights>&copy; 2020 bestgraders TRP Inc. All rights Reserved | Privacy | Terms of Service</Copyrights>
