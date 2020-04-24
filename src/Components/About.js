@@ -9,17 +9,30 @@ const Flex = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-image: url(${props=>props.image});
+  background-repeat: none;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+
+`;
+const Filter = styled.div`
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color:${_blue};
+  opacity: 0.3;
+  z-index: 1;
 `;
 
 const About = () => {
-  const fadeIn = useFadeIn();
   return(
     <>
-    <Flex ref={ fadeIn } style={{ opacity: "0" }}>
-      ABOUT
+    <Flex className="" image="https://images.unsplash.com/photo-1551892589-865f69869476?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9">
+      <p className="text-3xl text-white">ABOUT US</p>
     </Flex>
-    <section style={{height:"100vh"}}>
-      <ScrollAnimation animateIn="fadeInRight">
+    <section style={{height:"100vh", display: "flex", justifyContent:"center", alignItems:"flex-start"}}>
+      <ScrollAnimation animateIn="fadeInUp">
         Some Text
       </ScrollAnimation>
     </section>
