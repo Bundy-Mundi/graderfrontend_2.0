@@ -13,7 +13,7 @@ const Flex = styled.div`
   justify-content: center;
 `;
 const SearchBarConainer = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@ const GridContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  width: 400px;
+  width: 80%;
   transition: box-shadow 0.3s ease-in-out;
   @media (min-width:${size.laptop}) {
     display: none;
@@ -101,9 +101,9 @@ const Home = () => {
       <SearchBarConainer className="mb-12 animated fadeIn">
         <SearchBar whenScreenSmall="block" height="70px" fontWeight="700" width="400px"/>
       </SearchBarConainer>
-      <GridContainer className="animated fadeInUp mb-12 bg-white rounded shadow hover:shadow-xl pb-3">
+      {/*<GridContainer className="animated fadeInUp mb-12 bg-white rounded shadow hover:shadow-xl pb-3">
         <Text className="mt-8">Experience Visulaized Grade Distribution</Text>
-        <Grid>
+         <Grid>
           <IconBox row="1/4" column="" fontSize="44px"><i className="far fa-file-excel"></i></IconBox>
           <IconBox row="1/4" column="" fontSize="25px">
             <i style={{ transform:"rotate(-45deg)" }} className="fas fa-arrow-right"></i>
@@ -114,7 +114,7 @@ const Home = () => {
           <IconBox row="" column="" fontSize="44px"><i className="fas fa-chart-line"></i></IconBox>
           <IconBox row="" column="" fontSize="44px"><i className="far fa-chart-bar"></i></IconBox>
         </Grid>
-      </GridContainer>
+      </GridContainer> */}
     </Flex>
     </>
   );
