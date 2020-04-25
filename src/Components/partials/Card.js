@@ -87,7 +87,7 @@ const Card = (
       </Information>
       <div style={{ position:"relative" ,width: 400, height:400 }}>
         <Span color={ color }>{ chanceOfA }%</Span>
-        <Chart type='doughnut' data={ data } options={ options } />
+        <Chart height="50%" width="100%" type='doughnut' data={ data } options={ options } />
       </div>
      <Text className="mt-10" color={color} fontWeight="900">OF PEOPLE GOT A</Text>
     </Flex>

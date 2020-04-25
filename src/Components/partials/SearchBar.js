@@ -10,6 +10,7 @@ const Input = styled.input`
   font-family: 'DM Sans', sans-serif;
   transition: all 0.3s ease-in-out;
   padding-left: 50px;
+  border: 1px rgba(0,0,0,0.1) solid;
 `;
 const Form = styled.form`
   position: relative;
