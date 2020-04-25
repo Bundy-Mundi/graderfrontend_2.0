@@ -91,7 +91,7 @@ const ResponsiveButton = () => {
     let show = "none";
     const icon = Array.from(document.getElementsByClassName("menu-icon"));
     const dropDown = Array.from(document.getElementsByClassName("drop-down"));
-    console.log(dropDown);
+
     if (icon[0].style.transform === "" || icon[0].style.transform === "rotate(0deg)"){ 
       degree = "90"; 
       show = "50px";

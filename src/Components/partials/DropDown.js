@@ -9,9 +9,9 @@ const Container = styled.div`
   position: absolute;
   height: 0;
   width: 100%;
-  color: black;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
+  z-index: 99;
   @media (min-width:${size.laptop}) {
     display: none;
   }
@@ -28,6 +28,7 @@ const List = styled.ul`
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  
 `;
 const SLink = styled(Link)`
   display: flex;
